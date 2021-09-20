@@ -17,6 +17,7 @@ public class Level1 extends World
         // Create a new world with 1200x800 cells with a cell size of 1x1 pixels.
         super(1200, 800, 1, false); 
         prepare();
+        
     }
     
     /**
@@ -30,6 +31,8 @@ public class Level1 extends World
         Door door = new Door();
         addObject(door,1141,57);
         Player player = new Player();
-        addObject(player,78,641);
+        addObject(player,76,750);
+        addObject(new Floor(), 600, 800);
+
     }
 }
