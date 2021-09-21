@@ -16,4 +16,20 @@ public class Bomb extends Obstacle
     {
         // Add your action code here.
     }
+    private float yVelocity;
+    private final float GRAVITY;
+    public Bomb(float gravity)
+    {
+        GRAVITY = gravity;
+    }
+
+    public void act()
+    {
+
+    }
+
+    protected void fall()
+    { 
+
+    }
 }
