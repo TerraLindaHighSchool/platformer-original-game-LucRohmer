@@ -8,16 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bomb extends Obstacle
 {
-    /**
-     * Act - do whatever the Bomb wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
-    }
     private float yVelocity;
     private final float GRAVITY;
+    
     public Bomb(float gravity)
     {
         GRAVITY = gravity;
@@ -25,11 +18,16 @@ public class Bomb extends Obstacle
 
     public void act()
     {
+        fall();
 
     }
 
     protected void fall()
     { 
-
+        if(!isOnGround())
+        {
+            yVelocity += GRAVITY;
+            setLocation(getX(), getY() + (int) yVelocity);
+    }
     }
 }
