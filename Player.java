@@ -47,13 +47,79 @@ public class Player extends Actor
     }
     public void act() 
     {
-         animator();
-        move(speed);
+        walk();
+        jump();
+        fall();
+        onCollision();
+        gameOver();
     }
     public void addedToWorld( World world) {}
-    private void walk() {}
-    private void jump () {}
-    private void fall() {}
+    private void walk() 
+    {
+    if(isWalking)
+    {
+        animator();
+    }
+    else
+    {
+            setImage(STANDING_IMAGE);
+            walkIndex = 0;
+    }
+        
+    if(Greenfoot.isKeyDown("right"))
+        {
+            if(isFacingLeft)
+            {
+                mirrorImages();
+            }
+            isFacingLeft = false;
+            isWalking = true;
+            
+            move(speed);
+            
+        }
+        
+        if(Greenfoot.isKeyDown("left"))
+        {
+            if(!isFacingLeft)
+            {
+                mirrorImages();
+            }
+            isFacingLeft = true;
+            isWalking = true;
+            move(-speed);
+    }
+    if(!(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("right")))
+    {
+        isWalking = false;
+    }
+    }
+    private void jump () 
+    {
+        if(Greenfoot.isKeyDown("space") && isOnGround())
+        {
+            yVelocity = JUMP_FORCE;
+            isJumping = true;
+        }
+        
+        if(isJumping && yVelocity > 0.0)
+        {
+            setLocation(getX(), getY() - (int) yVelocity);
+            yVelocity -= GRAVITY;
+        }
+        else
+        {
+            isJumping = false;
+        }
+    }
+    private void fall() 
+    {
+        if(!isOnGround() && !isJumping)
+        {
+            setLocation(getX(), getY() - (int) yVelocity);
+            yVelocity -= GRAVITY;
+        }
+    }
     private void animator() 
     {
         if(frame % (15 - 2 * speed) == 0)
