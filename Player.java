@@ -138,10 +138,48 @@ public class Player extends Actor
         frame++;
     }
     
-    private void onCollision() {}
-    private void mirrorImages() {}
+    private void onCollision( )
+    {
+    if(isTouching(Door.class))
+    {
+        World world = null;
+        try 
+        {
+            world = (World) NEXT_LEVEL.newInstance();
+        }   
+        catch (InstantiationException e) 
+        {
+            System.out.println("Class cannot be instantiated");
+        } catch (IllegalAccessException e) {
+            System.out.println("Cannot access class constructor");
+        } 
+        Greenfoot.setWorld(world);
+    }
+    
+    if(isTouching(Obstacle.class))
+    {
+        removeTouching(Obstacle.class);
+    }
+    
+    if(isTouching(Platform.class) && ! isOnGround())
+    {
+        yVelocity = -1;
+        fall();
+    }
+    }   
+
+    private void mirrorImages() 
+    {
+        for(int i = 0; i < WALK_ANIMATION.length; i++)
+        {
+            WALK_ANIMATION[i].mirrorHorizontally();
+        }
+    
+    }
     private void gameOver() {}
-    private boolean isOnGround() {
-        return false;
+    private boolean isOnGround() 
+    {
+        Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platform.class);
+        return ground !=null;
     }
 }
