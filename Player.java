@@ -40,8 +40,8 @@ public class Player extends Actor
         
         WALK_ANIMATION = new GreenfootImage[]
         {
-            new GreenfootImage("walk0.png"),
-            new GreenfootImage("walk1.png"),
+            new GreenfootImage("knight.png"),
+            new GreenfootImage("knight11.png"),
             new GreenfootImage("walk2.png"),
             new GreenfootImage("walk3.png"),
             new GreenfootImage("walk4.png"),
@@ -78,7 +78,7 @@ public class Player extends Actor
             walkIndex = 0;
     }
         
-    if(Greenfoot.isKeyDown("right"))
+    if(Greenfoot.isKeyDown("d"))
         {
             if(!MUSIC.isPlaying())
             {
@@ -96,7 +96,7 @@ public class Player extends Actor
             
         }
         
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("a"))
         {
             if(!isFacingLeft)
             {
@@ -106,7 +106,7 @@ public class Player extends Actor
             isWalking = true;
             move(-speed);
     }
-    if(!(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("right")))
+    if(!(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("d")))
     {
         isWalking = false;
     }
