@@ -40,12 +40,12 @@ public class Player extends Actor
         
         WALK_ANIMATION = new GreenfootImage[]
         {
-            new GreenfootImage("knight.png"),
-            new GreenfootImage("knight11.png"),
-            new GreenfootImage("walk2.png"),
-            new GreenfootImage("walk3.png"),
-            new GreenfootImage("walk4.png"),
-            new GreenfootImage("walk5.png"),
+            new GreenfootImage("Knight2.png"),
+            new GreenfootImage("Knight3.png"),
+            new GreenfootImage("Knight4.png"),
+            new GreenfootImage("Knight2.png"),
+            new GreenfootImage("Knight3.png"),
+            new GreenfootImage("Knight4.png"),
         };
     }
     public void act() 
