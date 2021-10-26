@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Player extends Actor
 {
     private Health[] health;
-    private Powerup[] powerup;
     private int healthCount;
     private int speed;
     private int walkIndex;
@@ -33,7 +32,7 @@ public class Player extends Actor
         NEXT_LEVEL = nextLevel;
         MUSIC = music;
         
-        healthCount = maxHealth;
+        healthCount = 3;
         health = new Health[maxHealth];
         
         STANDING_IMAGE = getImage();
@@ -64,6 +63,8 @@ public class Player extends Actor
         world.addObject(health[1], 72, 36);
         health[2] = new Health();
         world.addObject(health[2], 114, 36);
+        health[4] = new Health();
+        world.addObject(health[4], 156, 36);
     }
     private void walk() 
     {
@@ -181,6 +182,14 @@ public class Player extends Actor
          Greenfoot.playSound("explosionSmall.wav");
         removeTouching(Obstacle.class);
         getWorld().removeObject(health[healthCount - 1]);
+        healthCount--;
+    }
+    
+    if(isTouching(Collectable.class))
+    {
+         Greenfoot.playSound("explosionSmall.wav");
+        removeTouching(Obstacle.class);
+        getWorld().removeObject(health[healthCount + 1]);
         healthCount--;
     }
     

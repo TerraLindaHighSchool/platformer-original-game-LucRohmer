@@ -12,7 +12,7 @@ public class Level1 extends World
     private final GreenfootSound MUSIC = new GreenfootSound("zapsplat_024.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
-    private final int MAX_HEALTH = 3;
+    private final int MAX_HEALTH = 6;
     private final int MAX_POWERUP = 3;
     private final Class NEXT_LEVEL = Level2.class;
     
@@ -50,13 +50,13 @@ public class Level1 extends World
         addObject(new BrickWall(), 500, 350);
         addObject(new SmBrickWall(), 850, 500);
         addObject(new BrickWall(), 600, 650);
-        addObject(new Gem(), 850, 450);
+        addObject(new Life(), 850, 450);
         addObject(new TrapDoor(), 170, 530);
-        addObject(new Gem(), 200, 200);
+        addObject(new Life(), 200, 200);
         addObject(new BrickWall(), 1000, 200);
         addObject(new SmBrickWall(), 1100, 400);
         addObject(new Bomb(GRAVITY), 900, 150);
-        addObject(new Gem(), 1100, 350);
+        addObject(new Life(), 1100, 350);
 
     }
     

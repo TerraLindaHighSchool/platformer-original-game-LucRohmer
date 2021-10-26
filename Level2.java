@@ -12,7 +12,7 @@ public class Level2 extends World
     private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
-    private final int MAX_HEALTH = 3;
+    private final int MAX_HEALTH = 6;
     private final int MAX_POWERUP = 3;
     private final Class NEXT_LEVEL = Level3.class;
     
@@ -47,16 +47,15 @@ public class Level2 extends World
         addObject(player,76,750);
         addObject(new Floor(), 600, 800);
         addObject(new Bomb(GRAVITY), 500, 300);
-        addObject(new BrickWall(), 800, 500);
-        addObject(new SmBrickWall(), 850, 300);
-        addObject(new BrickWall(), 431,629);
-        addObject(new Gem(), 850, 450);
-        addObject(new TrapDoor(), 170, 530);
-        addObject(new Gem(), 200, 200);
+        addObject(new BrickWall(), 300, 550);
+        addObject(new SmBrickWall(), 200, 350);
+        addObject(new BrickWall(), 950, 650);
+        addObject(new TrapDoor(), 650, 200);
+        addObject(new Life(), 1000, 600);
         addObject(new BrickWall(), 1000, 200);
-        addObject(new SmBrickWall(), 1100, 400);
+        addObject(new SmBrickWall(), 450, 200);
         addObject(new Bomb(GRAVITY), 900, 150);
-        addObject(new Gem(), 1100, 350);
+        addObject(new Life(), 450, 150);
 
     }
     
