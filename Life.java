@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gem here.
+ * This will give you an extra life.(Non-Functional)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Luc
+ * @10/28/21
  */
 public class Life extends Collectable
 {

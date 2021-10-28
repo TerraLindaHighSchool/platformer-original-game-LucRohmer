@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BrickWorld here.
+ * This is the second level of the castle.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Luc R.
+ * @10/28/21
  */
 public class Level2 extends World
 {
     private final float GRAVITY = 0.0667f;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("Level1Sound.wav");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.6f;
     private final int MAX_HEALTH = 6;
@@ -51,11 +51,9 @@ public class Level2 extends World
         addObject(new SmBrickWall(), 200, 350);
         addObject(new BrickWall(), 950, 650);
         addObject(new TrapDoor(), 650, 200);
-        addObject(new Life(), 1000, 600);
         addObject(new BrickWall(), 1000, 200);
         addObject(new SmBrickWall(), 450, 200);
         addObject(new Bomb(GRAVITY), 900, 150);
-        addObject(new Life(), 450, 150);
 
     }
     

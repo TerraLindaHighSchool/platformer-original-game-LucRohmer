@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player here.
+ * This is the Knight. The Knight's objective is to get to the end of the castle.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Luc R. 
+ * @10/28/21
  */
 public class Player extends Actor
 {
@@ -63,8 +63,6 @@ public class Player extends Actor
         world.addObject(health[1], 72, 36);
         health[2] = new Health();
         world.addObject(health[2], 114, 36);
-        health[4] = new Health();
-        world.addObject(health[4], 156, 36);
     }
     private void walk() 
     {
@@ -185,14 +183,6 @@ public class Player extends Actor
         healthCount--;
     }
     
-    if(isTouching(Collectable.class))
-    {
-         Greenfoot.playSound("explosionSmall.wav");
-        removeTouching(Obstacle.class);
-        getWorld().removeObject(health[healthCount + 1]);
-        healthCount--;
-    }
-    
     if(isTouching(Platform.class) && ! isOnGround())
     {
         yVelocity = -1;
@@ -208,6 +198,7 @@ public class Player extends Actor
         }
     
     }
+    
     private void gameOver()
     {
         if(healthCount == 0)
@@ -216,6 +207,7 @@ public class Player extends Actor
             MUSIC.stop( );
         }
     }
+    
     private boolean isOnGround() 
     {
         Actor ground = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platform.class);

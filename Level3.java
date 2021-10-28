@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BrickWorld here.
+ * This is the third level of the castle.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Luc R.
+ * @10/28/21
  */
 public class Level3 extends World
 {
     private final float GRAVITY = 0.0667f;
-    private final GreenfootSound MUSIC = new GreenfootSound("incompetech_tribal.mp3");
+    private final GreenfootSound MUSIC = new GreenfootSound("Level1Sound.wav");
     private final int SPEED = 3;
     private final float JUMP_FORCE = 5.8f;
     private final int MAX_HEALTH = 3;
-    private final int MAX_POWERUP = 3;
+    private final int MAX_POWERUP = 6;
     private final Class NEXT_LEVEL = WinSplash.class;
     
     /**
@@ -49,12 +49,10 @@ public class Level3 extends World
         addObject(new Bomb(GRAVITY), 550, 300);
         addObject(new SmBrickWall(), 450, 600);
         addObject(new SmBrickWall(), 400, 200);
-        addObject(new Life(), 850, 450);
-        addObject(new Life(), 200, 200);
         addObject(new BrickWall(), 1000, 200);
         addObject(new SmBrickWall(), 600, 400);
         addObject(new Bomb(GRAVITY), 900, 150);
-        addObject(new Life(), 1100, 350);
+
 
     }
     
